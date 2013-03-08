@@ -1,0 +1,18 @@
+## Interface: 50200
+## Version: 5.2.0.wowi:revision
+
+## Title: Commended
+## Notes: Adds "Already known" to item tooltips for Grand Commendations you already have.
+
+## Author: Phanx
+## X-Email: addons@phanx.net
+## X-Copyright: Copyright (c) 2013 Phanx. All rights reserved.
+## X-License: See the accompanying LICENSE file for information.
+## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, ptBR, ptPT, ruRU, koKR, zhCN, zhTW, enCN, enTW
+## X-Website: http://www.wowinterface.com/downloads/info22176-Commended.html
+## X-Curse-ProjectID: commended
+## X-WoWI-ID: 22176
+
+## OptionalDependencies: xMerchant
+
+Addon.lua
