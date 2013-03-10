@@ -3,6 +3,10 @@
 
 ## Title: Commended
 ## Notes: Adds "Already known" to item tooltips for Grand Commendations you already have.
+## Notes-esMX: Añade "Ya conocido" a los descripciones de la Grand Menciones que te ya desbloqueado.
+## Notes-esES: Añade "Ya conocido" a los descripciones de la Grand Menciones que te ya desbloqueado.
+## Notes-ptBR: Adicione "Já conhecido" as dicas das Grande Menções que você já desbloqueados.
+## Notes-ptPT: Adicione "Já conhecido" as dicas das Grande Menções que você já desbloqueados.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
@@ -13,6 +17,6 @@
 ## X-Curse-ProjectID: commended
 ## X-WoWI-ID: 22176
 
-## OptionalDependencies: xMerchant
+## OptionalDependencies: GnomishVendorShrinker, xMerchant
 
 Addon.lua

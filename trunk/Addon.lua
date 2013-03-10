@@ -31,12 +31,17 @@ local FACTION_FROM_ITEM = {
 ------------------------------------------------------------------------
 --	Utility functions
 
+
 local HasCommendation
 do
+	local cache = {}
 	local wasCollapsed = {}
 
 	function HasCommendation(searchID)
-		local result
+		local result = cache[searchID]
+		if result then
+			return result
+		end
 
 		local i = 1
 		while i <= GetNumFactions() do
@@ -61,8 +66,13 @@ do
 			i = i + 1
 		end
 
+		cache[searchID] = result
 		return result
 	end
+
+	local f = CreateFrame("Frame")
+	f:RegisterEvent("UPDATE_FACTION")
+	f:SetScript("OnEvent", function() wipe(cache) end)
 end
 
 ------------------------------------------------------------------------
@@ -103,10 +113,64 @@ hooksecurefunc("MerchantFrame_UpdateMerchantInfo", function()
 end)
 
 ------------------------------------------------------------------------
+--	Support for addon: GnomishVendorShrinker
+
+if IsAddOnLoaded("GnomishVendorShrinker") then
+	local GVS, GVS_ScrollFrame, GVS_EditBox
+	local buttons = {}
+
+	for _, f in ipairs({ MerchantFrame:GetChildren() }) do
+		if not f:GetName() and f:IsObjectType("Frame") then
+			local valid
+			for _, ff in ipairs({ f:GetChildren() }) do
+				if not ff:GetName() then
+					if ff:IsObjectType("Button") and ff.BuyItem and ff.ItemName then
+						tinsert(buttons, ff)
+						valid = true
+					elseif ff:IsObjectType("Slider") and valid then
+						GVS_ScrollFrame = ff
+					elseif ff:IsObjectType("EditBox") and valid then
+						GVS_EditBox = ff
+					end
+				end
+			end
+			if GVS_ScrollFrame then
+				GVS = f
+				break
+			end
+		end
+	end
+
+	local function Update()
+		for i = 1, #buttons do
+			local row = buttons[i]
+			local link = GetMerchantItemLink(row:GetID())
+			local item = link and tonumber(strmatch(link, "item:(%d+)"))
+			local faction = item and FACTION_FROM_ITEM[item]
+			if faction and HasCommendation(faction) then
+				row.backdrop:SetGradientAlpha("HORIZONTAL", 1,0,0,0.75, 1,0,0,0)
+				row.backdrop:Show()
+				row.icon:SetVertexColor(0.9, 0, 0)
+			end
+		end
+	end
+
+	GVS:HookScript("OnShow", Update)
+	GVS_ScrollFrame:HookScript("OnValueChanged", Update)
+	GVS_EditBox:HookScript("OnTextChanged", Update)
+end
+
+------------------------------------------------------------------------
 --	Support for addon: xMerchant
 
 if xMerchantScrollFrame then
-	xMerchantScrollFrame:HookScript("OnVerticalScroll", function(self)
+	local buttons = setmetatable({}, { __index = function(t, i)
+		local button = _G["xMerchantFrame"..i]
+		t[i] = button
+		return button
+	end })
+
+	local function Update(self)
 		local numMerchantItems = GetMerchantNumItems()
 		for i = 1, 10 do
 			local merchantItem = i + FauxScrollFrame_GetOffset(self)
@@ -117,9 +181,12 @@ if xMerchantScrollFrame then
 				if faction and HasCommendation(faction) then
 					local _, _, _, _, _, _, subType = GetItemInfo(link)
 					local subText = gsub(subType, "%(OBSOLETE%)", "")
-					_G["xMerchantFrame"..i].iteminfo:SetFormattedText("|cffd00000%s - %s|r", subText, ITEM_SPELL_KNOWN)
+					buttons[i].iteminfo:SetFormattedText("|cffd00000%s - %s|r", subText, ITEM_SPELL_KNOWN)
 				end
 			end
 		end
-	end)
+	end
+
+	xMerchantScrollFrame:HookScript("OnShow", Update)
+	xMerchantScrollFrame:HookScript("OnVerticalScroll", Update)
 end
