@@ -23,7 +23,6 @@ local FACTION_FROM_ITEM = {
 	[93231] = 1376, -- Operation: Shieldwall
 	[93229] = 1271, -- Order of the Cloud Serpent
 	[93220] = 1270, -- Shado-Pan
-	[95559] = 1435, -- Shado-Pan Assault
 	[95548] = 1388, -- Sunreaver Onslaught
 	[93226] = 1272, -- Tillers
 }
