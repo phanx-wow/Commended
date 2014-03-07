@@ -1,13 +1,9 @@
 --[[--------------------------------------------------------------------
 	Commended
-	A World of Warcraft user interface addon
-	Copyright (c) 2013 A. Kinley (Phanx)
-
-	This addon is freely available, and its source code freely viewable,
-	but it is not "open source software" and you may not distribute it,
-	with or without modifications, without permission from its author.
-
-	See the included README and LICENSE files for more information!
+	by Phanx <addons@phanx.net>
+	Adds “Already known” to item tooltips for Grand Commendations you already have.
+	This is free and unencumbered software released into the public domain.
+	See the included README and UNLICENSE files for more information!
 ----------------------------------------------------------------------]]
 
 local ADDON = ...
@@ -29,7 +25,6 @@ local FACTION_FROM_ITEM = {
 
 ------------------------------------------------------------------------
 --	Utility functions
-
 
 local HasCommendation
 do
