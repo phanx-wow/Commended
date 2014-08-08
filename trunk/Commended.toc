@@ -11,8 +11,8 @@
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright (c) 2013-2014 Phanx
-## X-License: Do not redistribute. See the accompanying LICENSE file for details.
+## X-Copyright: Copyright (c) 2013-2014 Phanx. All rights reserved.
+## X-License: See the accompanying LICENSE file for details.
 ## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, ptBR, ptPT, ruRU, koKR, zhCN, zhTW, enCN, enTW
 ## X-Website: http://www.wowinterface.com/downloads/info22176-Commended.html
 ## X-Curse-ProjectID: commended
