@@ -2,8 +2,10 @@
 	Commended
 	by Phanx <addons@phanx.net>
 	Adds “Already known” to item tooltips for Grand Commendations you already have.
-	This is free and unencumbered software released into the public domain.
-	See the included README and UNLICENSE files for more information!
+	Copyright (c) 2013-2014 Phanx <addons@phanx.net>
+	Do not redistribute. See the accompanying LICENSE file for details.
+	http://www.wowinterface.com/downloads/info22176-Commended.html
+	http://www.curse.com/addons/wow/commended
 ----------------------------------------------------------------------]]
 
 local ADDON = ...
