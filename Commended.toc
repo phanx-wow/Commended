@@ -1,22 +1,17 @@
 ## Interface: 60000
-## Version: 6.0.2.wowi:revision
+## Version: 6.0.2.13
 
 ## Title: Commended
-## Notes: Adds "Already known" to item tooltips for Grand Commendations you already have.
-## Notes-deDE: Fügt 'Bereits bekannt' gegebenenfalls im Gegenstandstooltips der Großes Belobigungsabzeichen hinzu.
-## Notes-esMX: Añade "Ya conocido" a los descripciones de la Grand Menciones que te ya desbloqueado.
-## Notes-esES: Añade "Ya conocido" a los descripciones de la Grand Menciones que te ya desbloqueado.
-## Notes-ptBR: Adicione "Já conhecido" as dicas das Grande Menções que você já desbloqueados.
-## Notes-ptPT: Adicione "Já conhecido" as dicas das Grande Menções que você já desbloqueados.
+## Notes: Marks the Grand Commendations you already have in tooltips and vendor windows.
+## Notes-deDE: Markiert die bereits bekannten Großes Belobigungsabzeichen in Tooltips und Händlerfenster.
+## Notes-esES: Marca las Grand Menciones que ya conoces en sus descripciones y las ventanas de vendedores.
+## Notes-esMX: Marca las Grand Menciones que ya conoces en sus descripciones y las ventanas de vendedores.
+## Notes-ptBR: Marque as Grande Menções que você já conhece em suas descrições e nas janelas dos comerciantes.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
 ## X-Copyright: Copyright (c) 2013-2014 Phanx. All rights reserved.
-## X-License: See the accompanying LICENSE file for details.
-## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, ptBR, ptPT, ruRU, koKR, zhCN, zhTW, enCN, enTW
-## X-Website: http://www.wowinterface.com/downloads/info22176-Commended.html
-## X-Curse-ProjectID: commended
-## X-WoWI-ID: 22176
+## X-Website: https://github.com/Phanx/Commended
 
 ## OptionalDependencies: GnomishVendorShrinker, xMerchant
 

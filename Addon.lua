@@ -3,7 +3,6 @@
 	by Phanx <addons@phanx.net>
 	Adds “Already known” to item tooltips for Grand Commendations you already have.
 	Copyright (c) 2013-2014 Phanx <addons@phanx.net>. All rights reserved.
-	See the accompanying README and LICENSE files for more information.
 	http://www.wowinterface.com/downloads/info22176-Commended.html
 	http://www.curse.com/addons/wow/commended
 ----------------------------------------------------------------------]]
