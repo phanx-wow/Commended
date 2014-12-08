@@ -1,5 +1,5 @@
 ## Interface: 60000
-## Version: 6.0.2.13
+## Version: @project-version@
 
 ## Title: Commended
 ## Notes: Marks the Grand Commendations you already have in tooltips and vendor windows.
